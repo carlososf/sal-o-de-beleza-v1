@@ -593,66 +593,81 @@ p {
 }
 
 /* Depoimentos */
-.testimonials-carousel {
-  display: flex;
-  justify-content: center;
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
   margin-top: 3rem;
 }
 
 .testimonial-card {
-  max-width: 800px;
-  text-align: center;
-  padding: 3rem;
+  background: var(--bg-primary);
+  border: 1px solid rgba(212, 175, 55, 0.15);
+  padding: 2.5rem;
   position: relative;
+  text-align: left;
 }
 
 .testimonial-card::before {
-  content: '“';
+  content: '"';
   font-family: var(--font-serif);
-  font-size: 8rem;
+  font-size: 6rem;
   color: var(--accent-gold);
-  opacity: 0.2;
+  opacity: 0.15;
   position: absolute;
-  top: -20px;
-  left: 50%;
-  transform: translateX(-50%);
+  top: -10px;
+  left: 20px;
   z-index: 0;
+  line-height: 1;
 }
 
 .testimonial-quote {
   font-family: var(--font-serif);
-  font-size: clamp(1.5rem, 3vw, 2.2rem);
-  line-height: 1.4;
+  font-size: 1.05rem;
+  line-height: 1.7;
   position: relative;
   z-index: 1;
   margin-bottom: 2rem;
+  color: var(--text-secondary);
+  font-style: italic;
+}
+
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
 
 .author-img {
-  width: 60px;
-  height: 60px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
   object-fit: cover;
-  margin: 0 auto 1rem;
+  flex-shrink: 0;
+  border: 2px solid var(--accent-gold);
 }
 
 .author-name {
   display: block;
-  font-weight: 500;
-  font-size: 1.1rem;
+  font-weight: 600;
+  font-size: 1rem;
+  font-family: var(--font-serif);
 }
 
 .author-title {
   color: var(--accent-gold);
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   text-transform: uppercase;
   letter-spacing: 1px;
+  margin-top: 2px;
+  display: block;
 }
 
 /* Galeria Instagramavel Modular */
 .gallery-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 1.5fr 1fr 1fr;
+  grid-template-rows: auto auto;
   gap: 1.5rem;
   margin-top: 3rem;
 }
@@ -660,7 +675,7 @@ p {
 .gallery-item {
   position: relative;
   overflow: hidden;
-  height: 400px;
+  height: 300px;
   border-radius: 2px;
 }
 
@@ -678,6 +693,7 @@ p {
 .gallery-item.large {
   grid-row: span 2;
   height: auto;
+  min-height: 500px;
 }
 
 /* CTA Final & Footer */
